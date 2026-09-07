@@ -1,0 +1,11 @@
+# Feature extraction and TCN training
+numpy>=1.24
+pandas>=2.0
+opencv-python>=4.8
+mediapipe>=0.10
+torch>=2.0
+ultralytics>=8.0
+tqdm>=4.65
+
+# CARLA bridge helpers. CARLA itself must match the simulator installation.
+Pillow>=10.0

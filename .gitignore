@@ -1,0 +1,44 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+
+# Python and editor artefacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Datasets, recordings, generated evidence, and model artefacts
+data/raw/
+data/features/
+data/frames/
+data/crops/
+data/videos/
+models/
+checkpoints/
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+
+# Generated experiment output (retain only hand-curated documentation)
+results/*
+!results/.gitkeep
+realtime_events*/
+
+# CARLA runtime state
+*.log
+*.jsonl
