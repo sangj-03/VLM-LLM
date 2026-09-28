@@ -1,0 +1,19 @@
+{
+  "target_fps": 10.0,
+  "roi": {
+    "x1": 765,
+    "y1": 108,
+    "x2": 1728,
+    "y2": 960
+  },
+  "window_sec": 1.5,
+  "train_stride_sec": 0.1,
+  "eval_stride_sec": 0.1,
+  "stable_tail_sec": 0.0,
+  "labels": {
+    "normal": "NORMAL",
+    "positive": "UNRESPONSIVE",
+    "transition": "TRANSITION",
+    "ignore": "IGNORE"
+  }
+}

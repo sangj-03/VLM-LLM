@@ -1,0 +1,121 @@
+{
+  "ensemble_type": "mean_observable_state_probability",
+  "model_module": "src/models/observable_state_tcn.py",
+  "model_paths": [
+    "assets/weights/tcn/observable_state_v38/observable_state_tcn_1p5s_seed72.pt",
+    "assets/weights/tcn/observable_state_v38/observable_state_tcn_1p5s_seed73.pt",
+    "assets/weights/tcn/observable_state_v38/observable_state_tcn_1p5s_seed74.pt",
+    "assets/weights/tcn/observable_state_v38/observable_state_tcn_1p5s_seed75.pt",
+    "assets/weights/tcn/observable_state_v38/observable_state_tcn_1p5s_seed76.pt"
+  ],
+  "class_names": [
+    "active",
+    "reduced",
+    "no_visible_response"
+  ],
+  "window_steps": 15,
+  "target_fps": 10.0,
+  "num_models": 5,
+  "selected_threshold": 0.5,
+  "early_warning_horizon_sec": 3.0,
+  "transition_threshold": 0.5700000000000001,
+  "transition_operational": false,
+  "state_decision": "nvr_argmax_when_observable_else_unobservable",
+  "operational_state_policy": "nvr_argmax_then_active_control_branch_required_for_reduced",
+  "reduced_head_operational": false,
+  "control_ensemble_path": "configs/ensembles/control_engagement_tcn_1p5s.json",
+  "minimum_observation_quality": 0.55,
+  "minimum_state_confidence": 0.0,
+  "validation_file": "data/windows/multitask_state_1p5s_s01_holdout/val.npz",
+  "validation_metrics": {
+    "accuracy": 0.9507286606523248,
+    "macro_f1": 0.5493070217318268,
+    "per_class": {
+      "active": {
+        "precision": 0.9520697167755992,
+        "recall": 0.9962006079027356,
+        "f1": 0.973635350909766,
+        "support": 1316
+      },
+      "reduced": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 14
+      },
+      "no_visible_response": {
+        "precision": 0.921875,
+        "recall": 0.5315315315315315,
+        "f1": 0.6742857142857144,
+        "support": 111
+      }
+    },
+    "confusion_matrix": [
+      [
+        1311,
+        0,
+        5
+      ],
+      [
+        14,
+        0,
+        0
+      ],
+      [
+        52,
+        0,
+        59
+      ]
+    ]
+  },
+  "nvr_gate_validation_metrics_at_fixed_operational_threshold": {
+    "precision": 0.9464285714285714,
+    "recall": 0.4774774774774775,
+    "f1": 0.6347305389221557,
+    "tp": 53,
+    "fp": 3,
+    "fn": 58,
+    "tn": 1327
+  },
+  "validation_threshold_diagnostic": {
+    "selected_on_s01_only_not_operational": 0.3,
+    "metrics": {
+      "precision": 0.7426470588235294,
+      "recall": 0.9099099099099099,
+      "f1": 0.8178137651821862,
+      "tp": 101,
+      "fp": 35,
+      "fn": 10,
+      "tn": 1295
+    }
+  },
+  "transition_validation_metrics": {
+    "precision": 0.05263157894736842,
+    "recall": 0.038461538461538464,
+    "f1": 0.044444444444444446,
+    "tp": 1,
+    "fp": 18,
+    "fn": 25,
+    "tn": 1286
+  },
+  "observation_quality_validation": {
+    "coverage": 0.9250520471894518,
+    "mean": 0.9112627506256104
+  },
+  "architecture": {
+    "dilations": [
+      1,
+      2,
+      4
+    ],
+    "convolutions_per_block": 1,
+    "receptive_field_frames": 15,
+    "pooling": "0.5_final_plus_0.5_mean"
+  },
+  "limitations": [
+    "NVR has six independent training incidents from three subjects; this is an observed no-response proxy, not medically verified loss of consciousness.",
+    "The old state-head reduced probability is diagnostic-only. A reduced decision requires separately validated control-engagement labels from the target camera.",
+    "The attached Drive&Act control branch logs a wrist-away-from-wheel candidate only; it cannot set reduced yet because its 3-D training pose and the live 2-D MediaPipe pose have not been calibrated.",
+    "transition probability is logged only; its validation evidence is insufficient for warning control."
+  ]
+}

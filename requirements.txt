@@ -1,11 +1,16 @@
-# Feature extraction and TCN training
-numpy>=1.24
-pandas>=2.0
-opencv-python>=4.8
-mediapipe>=0.10
-torch>=2.0
-ultralytics>=8.0
+# Tested with Python 3.11 on NVIDIA DGX Spark (GB10, aarch64, CUDA).
+# Install a CUDA build of torch/torchvision for your platform first
+# (https://pytorch.org/get-started/locally/), then: pip install -r requirements.txt
+torch>=2.4            # tested 2.13.0
+torchvision>=0.19     # tested 0.28.0 (MobileNetV3 eye-state model)
+numpy>=1.26,<2        # tested 1.26.4
+pandas>=2.0           # tested 3.0.5
+opencv-python>=4.9    # tested 4.11.0.86
+mediapipe==0.10.18    # uses the legacy mp.solutions.holistic API
+ultralytics>=8.4      # tested 8.4.130 (YOLO26n + ByteTrack)
+lap>=0.5              # ByteTrack assignment
+matplotlib>=3.8       # tested 3.11.1
 tqdm>=4.65
 
-# CARLA bridge helpers. CARLA itself must match the simulator installation.
-Pillow>=10.0
+# Qwen3-VL-2B-Instruct is served separately by vLLM (see scripts/start_vllm.sh);
+# the bridge itself only uses the Python standard library.

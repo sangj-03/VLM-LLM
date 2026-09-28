@@ -1,0 +1,66 @@
+{
+  "ensemble_type": "mean_control_engagement_probability",
+  "model_module": "src/models/control_engagement_tcn.py",
+  "model_paths": [
+    "assets/weights/tcn/control_engagement_1p5s/control_engagement_tcn_1p5s_seed82.pt",
+    "assets/weights/tcn/control_engagement_1p5s/control_engagement_tcn_1p5s_seed83.pt",
+    "assets/weights/tcn/control_engagement_1p5s/control_engagement_tcn_1p5s_seed84.pt",
+    "assets/weights/tcn/control_engagement_1p5s/control_engagement_tcn_1p5s_seed85.pt",
+    "assets/weights/tcn/control_engagement_1p5s/control_engagement_tcn_1p5s_seed86.pt"
+  ],
+  "class_names": [
+    "control_engaged",
+    "control_disengaged"
+  ],
+  "feature_names": [
+    "left_wrist_dx",
+    "left_wrist_dy",
+    "right_wrist_dx",
+    "right_wrist_dy",
+    "left_wrist_vx",
+    "left_wrist_vy",
+    "right_wrist_vx",
+    "right_wrist_vy",
+    "wrist_separation",
+    "left_wrist_visibility",
+    "right_wrist_visibility",
+    "left_hand_landmarks_valid",
+    "right_hand_landmarks_valid"
+  ],
+  "window_steps": 15,
+  "target_fps": 10.0,
+  "num_models": 5,
+  "selected_threshold": 0.5,
+  "control_operational": true,
+  "reduced_confirmation_windows": 5,
+  "runtime_decision": "observable_active_and_sustained_control_disengagement_becomes_reduced",
+  "test_metrics_at_argmax": {
+    "tp": 985,
+    "fp": 11,
+    "fn": 580,
+    "tn": 57,
+    "precision": 0.9889558232931727,
+    "recall": 0.6293929712460063,
+    "f1": 0.7692307692307692,
+    "accuracy": 0.6380894060012248
+  },
+  "test_metrics_at_fixed_threshold_0p50": {
+    "tp": 985,
+    "fp": 11,
+    "fn": 580,
+    "tn": 57,
+    "precision": 0.9889558232931727,
+    "recall": 0.6293929712460063,
+    "f1": 0.7692307692307692,
+    "accuracy": 0.6380894060012248
+  },
+  "provenance": {
+    "dataset": "Drive&Act",
+    "split": "official split 0 participant-disjoint",
+    "label": "3-D wrist-to-wheel geometry weak label"
+  },
+  "limitations": [
+    "This does not measure consciousness or medical impairment.",
+    "Training uses Drive&Act 3-D pose while the live runtime uses 2-D MediaPipe features; reduced therefore means visual control disengagement, not a medical consciousness determination."
+  ]
+}

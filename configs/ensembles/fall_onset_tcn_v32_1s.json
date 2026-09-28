@@ -1,0 +1,16 @@
+{
+  "ensemble_type": "mean_probability",
+  "model_module": "src/models/binary_tcn.py",
+  "model_paths": [
+    "assets/weights/tcn/fall_onset_1s_v32/binary_tcn_fall_onset_1s_seed42.pt",
+    "assets/weights/tcn/fall_onset_1s_v32/binary_tcn_fall_onset_1s_seed43.pt",
+    "assets/weights/tcn/fall_onset_1s_v32/binary_tcn_fall_onset_1s_seed44.pt",
+    "assets/weights/tcn/fall_onset_1s_v32/binary_tcn_fall_onset_1s_seed45.pt",
+    "assets/weights/tcn/fall_onset_1s_v32/binary_tcn_fall_onset_1s_seed46.pt"
+  ],
+  "selected_threshold": 0.36000000000000004,
+  "target_recall": 0.9,
+  "validation_file": "data/windows/fall_onset_1s_v32_event_split/val.npz",
+  "window_steps": 10,
+  "num_models": 5
+}
