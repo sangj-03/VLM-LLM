@@ -1,0 +1,89 @@
+{
+  "title": "TCN-only",
+  "evaluation_type": "continuous_timeline",
+  "matched_samples": 1428,
+  "duration_sec": 286.9736842105263,
+  "observation_window_sec": [
+    1.3160000000000103,
+    286.9736842105263
+  ],
+  "no_visible_response": {
+    "tp": 37,
+    "fp": 30,
+    "fn": 63,
+    "precision": 0.5522388059701493,
+    "recall": 0.37,
+    "f1": 0.4431137724550898
+  },
+  "macro_f1": 0.5074110078413642,
+  "overall_state_errors": {
+    "count": 358,
+    "rate": 0.2507002801120448
+  },
+  "event_metrics": {
+    "tp": 2,
+    "fp": 7,
+    "fn": 0,
+    "precision": 0.2222222222222222,
+    "recall": 1.0,
+    "f1": 0.36363636363636365,
+    "fp_per_second": 0.024392480513525907
+  },
+  "operational": {
+    "calls_per_min": 298.56396148555706,
+    "model_latency_ms": {
+      "mean": 4.908004901960781,
+      "p50": 4.738,
+      "p95": 5.02565
+    },
+    "end_to_end_latency_ms": {
+      "mean": 4.908004901960781,
+      "p50": 4.738,
+      "p95": 5.02565
+    }
+  },
+  "per_class": {
+    "active": {
+      "tp": 992,
+      "fp": 247,
+      "fn": 96,
+      "precision": 0.8006456820016142,
+      "recall": 0.9117647058823529,
+      "f1": 0.852599914052428
+    },
+    "reduced": {
+      "tp": 41,
+      "fp": 81,
+      "fn": 199,
+      "precision": 0.3360655737704918,
+      "recall": 0.17083333333333334,
+      "f1": 0.2265193370165746
+    },
+    "no_visible_response": {
+      "tp": 37,
+      "fp": 30,
+      "fn": 63,
+      "precision": 0.5522388059701493,
+      "recall": 0.37,
+      "f1": 0.4431137724550898
+    }
+  },
+  "accuracy": 0.7492997198879552,
+  "confusion_matrix": [
+    [
+      992,
+      69,
+      27
+    ],
+    [
+      196,
+      41,
+      3
+    ],
+    [
+      51,
+      12,
+      37
+    ]
+  ]
+}

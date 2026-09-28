@@ -1,0 +1,182 @@
+{
+  "audit": {
+    "grid_seconds": 1.5,
+    "sample_count_per_system": {
+      "TCN-only": 192,
+      "VLM-only": 192,
+      "TCN–VLM–YOLO": 192
+    },
+    "observation_window_sec": [
+      0.0,
+      286.973684
+    ],
+    "event_min_overlap_sec": 0.5,
+    "fusion_default_when_no_candidate": "non-NVR",
+    "tcn_source": "results/paper_20260917/inputs/tcn_only_states.jsonl",
+    "vlm_source": "results/paper_20260917/inputs/vlm_only_clips.jsonl",
+    "fusion_source": "results/paper_20260917/inputs/tcn_vlm_yolo_matched.csv",
+    "vlm_completed_run_records": 192,
+    "model_latency_basis": "native request streams: all TCN forward passes, all completed VLM-only calls, and all candidate-triggered fusion calls"
+  },
+  "systems": {
+    "TCN-only": {
+      "title": "TCN-only",
+      "evaluation_type": "common_1p5s_binary_grid",
+      "comparison_basis": "same 1.5-second windows; NVR vs non-NVR",
+      "matched_samples": 192,
+      "duration_sec": 286.973684,
+      "observation_window_sec": [
+        0.0,
+        286.973684
+      ],
+      "accuracy": 0.9479166666666666,
+      "macro_f1": 0.5833333333333334,
+      "per_class": {
+        "no_visible_response": {
+          "tp": 7,
+          "fp": 4,
+          "fn": 6,
+          "precision": 0.6363636363636364,
+          "recall": 0.5384615384615384,
+          "f1": 0.5833333333333334
+        }
+      },
+      "no_visible_response": {
+        "tp": 7,
+        "fp": 4,
+        "fn": 6,
+        "precision": 0.6363636363636364,
+        "recall": 0.5384615384615384,
+        "f1": 0.5833333333333334
+      },
+      "event_metrics": {
+        "tp": 2,
+        "fp": 4,
+        "fn": 0,
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1": 0.5,
+        "fp_per_hour": 50.17881709320775,
+        "matching": "one-to-one, minimum temporal overlap 0.5 s",
+        "detection_latency_sec": {
+          "samples": 2,
+          "p50": 4.425876500000001,
+          "p95": 4.42604435
+        }
+      },
+      "operational": {
+        "model_latency_ms": {
+          "mean": 4.908004901960781,
+          "p50": 4.738,
+          "p95": 5.02565
+        }
+      }
+    },
+    "VLM-only": {
+      "title": "VLM-only",
+      "evaluation_type": "common_1p5s_binary_grid",
+      "comparison_basis": "same 1.5-second windows; NVR vs non-NVR",
+      "matched_samples": 192,
+      "duration_sec": 286.973684,
+      "observation_window_sec": [
+        0.0,
+        286.973684
+      ],
+      "accuracy": 0.953125,
+      "macro_f1": 0.6896551724137931,
+      "per_class": {
+        "no_visible_response": {
+          "tp": 10,
+          "fp": 6,
+          "fn": 3,
+          "precision": 0.625,
+          "recall": 0.7692307692307693,
+          "f1": 0.6896551724137931
+        }
+      },
+      "no_visible_response": {
+        "tp": 10,
+        "fp": 6,
+        "fn": 3,
+        "precision": 0.625,
+        "recall": 0.7692307692307693,
+        "f1": 0.6896551724137931
+      },
+      "event_metrics": {
+        "tp": 2,
+        "fp": 6,
+        "fn": 0,
+        "precision": 0.25,
+        "recall": 1.0,
+        "f1": 0.4,
+        "fp_per_hour": 75.26822563981162,
+        "matching": "one-to-one, minimum temporal overlap 0.5 s",
+        "detection_latency_sec": {
+          "samples": 2,
+          "p50": 4.284649999999999,
+          "p95": 4.287934999999993
+        }
+      },
+      "operational": {
+        "model_latency_ms": {
+          "mean": 1212.4504166666668,
+          "p50": 1218.35,
+          "p95": 1255.1175
+        }
+      }
+    },
+    "TCN–VLM–YOLO": {
+      "title": "TCN–VLM–YOLO",
+      "evaluation_type": "common_1p5s_binary_grid",
+      "comparison_basis": "same 1.5-second windows; NVR vs non-NVR",
+      "matched_samples": 192,
+      "duration_sec": 286.973684,
+      "observation_window_sec": [
+        0.0,
+        286.973684
+      ],
+      "accuracy": 0.9739583333333334,
+      "macro_f1": 0.7826086956521738,
+      "per_class": {
+        "no_visible_response": {
+          "tp": 9,
+          "fp": 1,
+          "fn": 4,
+          "precision": 0.9,
+          "recall": 0.6923076923076923,
+          "f1": 0.7826086956521738
+        }
+      },
+      "no_visible_response": {
+        "tp": 9,
+        "fp": 1,
+        "fn": 4,
+        "precision": 0.9,
+        "recall": 0.6923076923076923,
+        "f1": 0.7826086956521738
+      },
+      "event_metrics": {
+        "tp": 2,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "fp_per_hour": 25.089408546603874,
+        "matching": "one-to-one, minimum temporal overlap 0.5 s",
+        "detection_latency_sec": {
+          "samples": 2,
+          "p50": 4.307400000000001,
+          "p95": 4.39020899999999
+        }
+      },
+      "operational": {
+        "model_latency_ms": {
+          "mean": 1344.1128735632187,
+          "p50": 1347.48,
+          "p95": 1403.9189999999999
+        }
+      }
+    }
+  }
+}

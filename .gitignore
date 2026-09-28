@@ -1,44 +1,30 @@
-# Credentials and local configuration
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-*.crt
-
-# Python and editor artefacts
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.mypy_cache/
-.venv/
-venv/
-.idea/
-.vscode/
-
-# Datasets, recordings, generated evidence, and model artefacts
-data/raw/
-data/features/
-data/frames/
-data/crops/
-data/videos/
-models/
-checkpoints/
+# Local assets: model weights and in-cabin video (not distributed, see README)
+assets/
 *.pt
 *.pth
+*.task
 *.onnx
 *.safetensors
 *.mp4
 *.avi
 *.mov
 *.mkv
-*.webm
 
-# Generated experiment output (retain only hand-curated documentation)
-results/*
-!results/.gitkeep
-realtime_events*/
+# Run outputs (scripts write here by default)
+outputs/
 
-# CARLA runtime state
-*.log
-*.jsonl
+# Python / editor
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.idea/
+.vscode/
+
+# Credentials
+.env
+.env.*
+
+# Vector copies of the result figures (PNG versions are tracked)
+results/**/*.pdf

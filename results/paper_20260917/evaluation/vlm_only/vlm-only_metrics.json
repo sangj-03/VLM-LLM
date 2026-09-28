@@ -1,0 +1,89 @@
+{
+  "title": "VLM-only",
+  "evaluation_type": "continuous_timeline",
+  "matched_samples": 192,
+  "duration_sec": 286.9736842105263,
+  "observation_window_sec": [
+    0.75,
+    286.9736842105263
+  ],
+  "no_visible_response": {
+    "tp": 9,
+    "fp": 7,
+    "fn": 5,
+    "precision": 0.5625,
+    "recall": 0.6428571428571429,
+    "f1": 0.6
+  },
+  "macro_f1": 0.5248758662083265,
+  "overall_state_errors": {
+    "count": 94,
+    "rate": 0.4895833333333333
+  },
+  "event_metrics": {
+    "tp": 2,
+    "fp": 6,
+    "fn": 0,
+    "precision": 0.25,
+    "recall": 1.0,
+    "f1": 0.4,
+    "fp_per_second": 0.020907840440165065
+  },
+  "operational": {
+    "calls_per_min": 40.14305364511692,
+    "model_latency_ms": {
+      "mean": 1212.4504166666668,
+      "p50": 1218.35,
+      "p95": 1255.1175
+    },
+    "end_to_end_latency_ms": {
+      "mean": 1235.6218749999994,
+      "p50": 1241.35,
+      "p95": 1277.03
+    }
+  },
+  "per_class": {
+    "active": {
+      "tp": 60,
+      "fp": 0,
+      "fn": 85,
+      "precision": 1.0,
+      "recall": 0.41379310344827586,
+      "f1": 0.5853658536585366
+    },
+    "reduced": {
+      "tp": 29,
+      "fp": 87,
+      "fn": 4,
+      "precision": 0.25,
+      "recall": 0.8787878787878788,
+      "f1": 0.38926174496644295
+    },
+    "no_visible_response": {
+      "tp": 9,
+      "fp": 7,
+      "fn": 5,
+      "precision": 0.5625,
+      "recall": 0.6428571428571429,
+      "f1": 0.6
+    }
+  },
+  "accuracy": 0.5104166666666666,
+  "confusion_matrix": [
+    [
+      60,
+      82,
+      3
+    ],
+    [
+      0,
+      29,
+      4
+    ],
+    [
+      0,
+      5,
+      9
+    ]
+  ]
+}

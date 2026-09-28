@@ -1,0 +1,90 @@
+{
+  "title": "TCN–VLM–YOLO",
+  "evaluation_type": "candidate_sampled",
+  "matched_samples": 87,
+  "duration_sec": 286.9736842105263,
+  "observation_window_sec": [
+    0.0,
+    286.9736842105263
+  ],
+  "per_class": {
+    "active": {
+      "tp": 33,
+      "fp": 2,
+      "fn": 29,
+      "precision": 0.9428571428571428,
+      "recall": 0.532258064516129,
+      "f1": 0.6804123711340205
+    },
+    "reduced": {
+      "tp": 8,
+      "fp": 32,
+      "fn": 2,
+      "precision": 0.2,
+      "recall": 0.8,
+      "f1": 0.32000000000000006
+    },
+    "no_visible_response": {
+      "tp": 11,
+      "fp": 1,
+      "fn": 4,
+      "precision": 0.9166666666666666,
+      "recall": 0.7333333333333333,
+      "f1": 0.8148148148148148
+    }
+  },
+  "macro_f1": 0.6050757286496119,
+  "accuracy": 0.5977011494252874,
+  "confusion_matrix": [
+    [
+      33,
+      29,
+      0
+    ],
+    [
+      1,
+      8,
+      1
+    ],
+    [
+      1,
+      3,
+      11
+    ]
+  ],
+  "no_visible_response": {
+    "tp": 11,
+    "fp": 1,
+    "fn": 4,
+    "precision": 0.9166666666666666,
+    "recall": 0.7333333333333333,
+    "f1": 0.8148148148148148
+  },
+  "overall_state_errors": {
+    "count": 35,
+    "rate": 0.40229885057471265
+  },
+  "event_metrics": {
+    "tp": 2,
+    "fp": 1,
+    "fn": 0,
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1": 0.8,
+    "fp_per_second": 0.0034846400733608437,
+    "definition": "one decision per unique TCN/YOLO candidate event"
+  },
+  "operational": {
+    "calls_per_min": 18.189821182943604,
+    "candidate_events_per_min": 16.517193947730398,
+    "model_latency_ms": {
+      "mean": 1344.1128735632187,
+      "p50": 1347.48,
+      "p95": 1403.9189999999999
+    },
+    "end_to_end_latency_ms": {
+      "mean": null,
+      "p95": null
+    }
+  }
+}
