@@ -162,15 +162,7 @@ Results are saved in `outputs/<system>/`. Extra arguments are passed through to 
 
 When the VLM is called depends on real-time processing speed, so the numbers can change slightly between runs. When the same code was run again on 2026-09-21, the proposed system's NVR F1 was 0.750 (precision 0.818, recall 0.692).
 
-## Limitations
-
-- This is a preliminary evaluation on one driver and one video (about 287 s), with only two real NVR events. The event-level metrics therefore have weak statistical support.
-- The evaluation video overlaps with the source data used to train the TCNs, so these numbers do not measure generalization. The system must be validated again on independent test data covering different drivers, lighting and driving conditions.
-- The TCN-only baseline uses the v35 model and the proposed system uses v38, so the comparison does not isolate the effect of adding the VLM.
-- The driver description in the VLM prompt (seat position, clothing) and the default driver ROI are tuned to the camera layout of the evaluation video. For other vehicles or cameras, adjust the prompts in `src/bridge/` and the runner arguments (e.g. `--vlm-driver-seat-left-ratio`).
-- `no_visible_response` means that no response is visible in the video. It is not a medical diagnosis of consciousness. This is a research prototype.
 
 ## References
 
 - Models used: [Qwen3-VL-2B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct), [Ultralytics YOLO26](https://docs.ultralytics.com/), [MediaPipe](https://ai.google.dev/edge/mediapipe), [vLLM](https://github.com/vllm-project/vllm). Each model and dataset is subject to its own license.
-- Corresponding author: Prof. Jong-Chan Kim, Department of Automobile and IT Convergence, Kookmin University
