@@ -162,15 +162,6 @@ assets/
 
 VLM 호출 시점은 실시간 처리 속도에 따라 달라지므로 재실행하면 수치가 조금씩 달라질 수 있습니다. 같은 코드로 2026-09-21에 다시 실행했을 때 제안 구조의 NVR F1은 0.750(정밀도 0.818, 재현율 0.692)이었습니다.
 
-## 한계
-
-- 단일 운전자·단일 영상(약 287 s)에 대한 기초 평가이며, 실제 반응 부재 사건은 2건뿐입니다. 사건 단위 지표의 통계적 근거가 작습니다.
-- 평가 영상이 TCN 학습 원본과 겹치므로 일반화 성능이 아닙니다. 다양한 운전자·조명·주행 조건의 독립 시험 데이터로 다시 검증해야 합니다.
-- TCN 단독 비교군은 v35 모델, 제안 구조는 v38 모델을 사용하므로 VLM 결합 효과만 분리한 비교는 아닙니다.
-- VLM 프롬프트의 운전자 설명(좌석 위치·복장)과 운전자 ROI 기본값은 평가 영상의 카메라 배치에 맞춰져 있습니다. 다른 차량·카메라에는 `src/bridge/`의 프롬프트와 실행 인자(`--vlm-driver-seat-left-ratio` 등)를 조정해야 합니다.
-- `no_visible_response`는 영상에서 보이는 반응 부재를 뜻하며 의학적 의식 상태 진단이 아닙니다. 연구용 프로토타입입니다.
-
 ## 참고
 
 - 사용 모델: [Qwen3-VL-2B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct), [Ultralytics YOLO26](https://docs.ultralytics.com/), [MediaPipe](https://ai.google.dev/edge/mediapipe), [vLLM](https://github.com/vllm-project/vllm). 각 모델과 데이터셋은 해당 라이선스를 따릅니다.
-- 교신저자: 김종찬 교수, 국민대학교 자동차IT융합학과
