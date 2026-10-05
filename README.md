@@ -160,7 +160,7 @@ Results are saved in `outputs/<system>/`. Extra arguments are passed through to 
 ./scripts/evaluate.sh --latest    # latest 3 runs in outputs/ → outputs/evaluation/
 ```
 
-When the VLM is called depends on real-time processing speed, so the numbers can change slightly between runs. When the same code was run again on 2026-09-21, the proposed system's NVR F1 was 0.750 (precision 0.818, recall 0.692).
+When the VLM is called depends on real-time processing speed, so the numbers can change slightly between runs.
 
 
 ## References
