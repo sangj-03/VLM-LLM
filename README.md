@@ -14,11 +14,11 @@ Compared with running the VLM on every segment, the goal is to raise the F1 scor
 
 An in-cabin driver video of about 287 s was split into 192 segments of 1.5 s. The three systems were compared under the same conditions on **no visible response (NVR) vs. all other states**.
 
-| System | Accuracy | NVR precision | NVR recall | **NVR F1** | Event F1 | False-alarm events | Mean model-call latency |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| TCN-only | 94.8% | 0.636 | 0.538 | 0.583 | 0.500 | 4 | 4.9 ms |
-| VLM-only | 95.3% | 0.625 | **0.769** | 0.690 | 0.400 | 6 | 1,212.5 ms |
-| **TCN–VLM–YOLO (proposed)** | **97.4%** | **0.900** | 0.692 | **0.783** | **0.667** | **2** | 1,344.1 ms |
+| System | NVR precision | NVR recall | **NVR F1** | Event F1 | False-alarm events | Mean model-call latency |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| TCN-only | 0.636 | 0.538 | 0.583 | 0.500 | 4 | 4.9 ms |
+| VLM-only | 0.625 | **0.769** | 0.690 | 0.400 | 6 | 1,212.5 ms |
+| **TCN–VLM–YOLO (proposed)** | **0.900** | 0.692 | **0.783** | **0.667** | **2** | 1,344.1 ms |
 
 - All three systems detected both real NVR events (event recall 1.000). The proposed system reduced false-alarm events from 6 (VLM-only) to 2.
 - The table is recomputed exactly by `./scripts/evaluate.sh` from the paper's run logs included in this repository (no GPU, video or weights needed).
